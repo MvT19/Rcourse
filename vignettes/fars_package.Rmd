@@ -1,0 +1,76 @@
+---
+title: "Fars"
+author: "MvT"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Fars}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+# Package Description
+
+The package reads in data from the US National Highway Traffic Safety Administration's Fatality Analysis Reporting System (FARS).
+It provides summaries of the data by months and maps the distribution of accidents per state.
+
+## Load packages
+
+```{r}
+library(Fars)
+library(maps)
+```
+
+## Included data
+
+Data files included within the package are:
+
+```{r}
+list.files(system.file("extdata", package = "Fars"))
+```
+
+
+## Package Functions
+
+### Function `fars_read`
+
+This function reads in csv data.
+
+### Function `make_filename`
+
+This is a function that returns a filename in the format "accident_year.csv.bz2",
+where you can specify the year.
+
+```{r}
+yr<-2013
+make_filename(yr)
+```
+
+### Function `fars_read_years`
+
+This is a function that reads in FARS data by using as an input the year.
+
+```{r}
+setwd(system.file("extdata", package = "Fars"))
+fars_read_years(2013)
+```
+
+
+### Function `fars_summarize_years`
+
+This function summarizes "FARS" data per month in a given year, that is specifid in the input.
+
+```{r fars_summarize_years_example}
+setwd(system.file("extdata", package = "Fars"))
+fars_summarize_years(2013:2015)
+```
+
+### Function `fars_map_state`
+
+This function plots the geographical boundaries of a state and the distribution of reported accidents within the state.
+
+```{r fars_map_state_example}
+setwd(system.file("extdata", package = "Fars"))
+fars_map_state(4, 2013)
+```
+
+
