@@ -18,4 +18,6 @@ This is a basic example which shows you how to solve a common problem:
 ## basic example code
 ```
 
-# Fars
+# Travis build
+
+https://travis-ci.org/MvT19/Rcourse.svg?branch=master
