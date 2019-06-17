@@ -20,4 +20,4 @@ This is a basic example which shows you how to solve a common problem:
 
 # Travis build
 
-https://travis-ci.org/MvT19/Rcourse.svg?branch=master
+[![Build Status](https://travis-ci.org/MvT19/Rcourse.svg?branch=master)](https://travis-ci.org/MvT19/Rcourse)
